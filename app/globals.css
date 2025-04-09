@@ -1,0 +1,16 @@
+@import 'tailwindcss';
+@import 'tw-animate-css';
+
+@custom-variant dark (&:is(.dark *));
+
+@theme {
+  --color-primary: #009148;
+  --color-text-primary: #2c3e50;
+  --color-secondary: #f2f2f2;
+  --color-text-secondary: #676767;
+
+  --var-primary: var(--color-primary);
+  --var-text-primary: var(--color-text-primary);
+  --var-secondary: var(--color-secondary);
+  --var-text-secondary: var(--color-text-secondary);
+}
