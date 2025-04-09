@@ -14,7 +14,7 @@ export const metadata: Metadata = {
 
   // Your logo here
   icons: {
-    icon: '/'
+    icon: '/logo'
   }
 };
 
