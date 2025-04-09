@@ -1,4 +1,7 @@
-import PersonalLandingPage from './personal/page';
+'use client';
+
+import { Button } from '@/components/ui/button';
+import { HandleApiSuccess, HandleApiError } from './apiService/apiResponseHandler';
 
 export default function Home() {
   const refetchApi = () => {
@@ -13,7 +16,12 @@ export default function Home() {
 
   return (
     <div>
-      <PersonalLandingPage />
+      <Button variant="outline" onClick={() => HandleApiSuccess()}>
+        Success
+      </Button>
+      <Button variant="outline" onClick={() => HandleApiError({}, refetchApi)}>
+        Error
+      </Button>
     </div>
   );
 }
