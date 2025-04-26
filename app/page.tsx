@@ -12,7 +12,7 @@ export default function Home() {
 
   // const accountBalanceData = useMemo(() => {
   //   return data?.data?.data || [];
-  // }, [data]);
+  // }, []);
 
   return (
     <div>

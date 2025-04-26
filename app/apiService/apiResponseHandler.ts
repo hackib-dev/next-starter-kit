@@ -1,6 +1,6 @@
 import { toast } from 'sonner';
 
-interface ApiResponse {
+export interface ApiResponse {
   data?: {
     description?: string;
   };
@@ -12,19 +12,25 @@ interface ApiResponse {
 }
 
 export const HandleApiSuccess = (data?: ApiResponse, message?: string) => {
-  toast('Successful!', {
+  toast.success('Successful!', {
+    style: { color: 'black', backgroundColor: 'white' },
     description: data?.data?.description || message,
-    style: { color: 'black', backgroundColor: 'white' }
+    closeButton: true,
+    richColors: true
   });
 };
 
-export const HandleApiError = (error?: ApiResponse, refetchApi?: () => void) => {
-  toast('Uh oh! Something went wrong.', {
-    description: error?.response?.data?.description || 'An error occurred, please try again.',
+export const HandleApiError = (error: Error | ApiResponse | undefined, retry?: () => void) => {
+  const apiError = error as any;
+
+  toast.error('Uh oh! Something went wrong.', {
     style: { color: 'white', backgroundColor: 'red' },
+    description: apiError?.response?.data?.description || 'An error occurred, please try again.',
     action: {
       label: 'Retry',
-      onClick: () => refetchApi!()
-    }
+      onClick: retry!
+    },
+    closeButton: true,
+    richColors: true
   });
 };

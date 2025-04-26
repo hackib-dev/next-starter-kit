@@ -41,12 +41,14 @@ module.exports = {
     'react/react-in-jsx-scope': ['off'],
     'no-unused-vars': ['off'],
     '@typescript-eslint/no-unused-vars': ['warn'],
+    'no-implicit-any': ['off'],
     'operator-linebreak': ['off'],
     'no-confusing-arrow': ['off'],
     'function-paren-newline': ['off'],
     'implicit-arrow-linebreak': ['off'],
     'react/no-unused-prop-types': ['off'],
     '@typescript-eslint/no-non-null-assertion': ['off'],
+    '@typescript-eslint/no-explicit-any': ['warn'],
     'max-len': ['off'],
     'no-shadow': ['off'],
     'react/prop-types': ['off'],
@@ -59,6 +61,7 @@ module.exports = {
     'consistent-return': ['off'],
     'no-plusplus': ['off']
   },
+
   settings: {
     react: {
       version: 'detect'
